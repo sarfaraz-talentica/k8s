@@ -1,3 +1,6 @@
+## Kind Setup 
+https://kind.sigs.k8s.io/docs/user/quick-start/#installation
+
 ## Kind cluster
 ```
 kind create cluster --config kind-config.yaml
