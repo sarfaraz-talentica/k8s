@@ -333,6 +333,7 @@ spec:
                   - /wait-shutdown
           args:
             - /nginx-ingress-controller
+            - --enable-ssl-passthrough
             - --election-id=ingress-controller-leader
             - --ingress-class=nginx
             - --configmap=$(POD_NAMESPACE)/ingress-nginx-controller
