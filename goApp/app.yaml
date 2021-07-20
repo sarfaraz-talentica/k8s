@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: gaurav04/deserve:latest
+        image: gaurav04/go-app:latest
         resources:
           limits:
             memory: "128Mi"
