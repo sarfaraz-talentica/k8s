@@ -8,11 +8,11 @@ kind create cluster --config kind-config.yaml
 
 ## Install Ingress
 ```
-kubectl  apply -f nginx-ingress.yaml
+kubectl  apply -f nginx-ingress/nginx-ingress.yaml
 ```
 
-## Deploy app in Kind
+## Install ArgoCD
 ```
-kubectl  apply -f deserve.yaml
+kubectl create namespace argocd
+kubectl  apply -n argocd -f argo-cd/install.yaml 
 ```
-
