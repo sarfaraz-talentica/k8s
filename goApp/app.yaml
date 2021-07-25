@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: gaurav04/go-app:latest
+        image: gaurav04/go-app:137e1ae
+
         resources:
           limits:
             cpu: 250m
