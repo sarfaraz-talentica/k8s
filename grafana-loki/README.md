@@ -13,10 +13,10 @@ helm install loki-stack grafana/loki-stack --values loki-stack-values.yaml -n lo
 To get the admin password for the Grafana pod, run the following command:
 
 ```
-kubectl get secret --namespace <YOUR-NAMESPACE> loki-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+kubectl get secret --namespace loki-stack loki-stack-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 ```
 
 To access the Grafana UI, run the following command:
 ```
-kubectl port-forward --namespace <YOUR-NAMESPACE> service/loki-grafana 3000:80
+kubectl port-forward --namespace loki-stack service/loki-grafana 3000:80
 ```
