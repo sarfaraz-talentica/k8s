@@ -17,5 +17,5 @@ kubectl  apply -f nginx-ingress/nginx-ingress.yaml
 kubectl create namespace argocd
 kubectl  apply -n argocd -f argo-cd/install.yaml 
 ```
-##  Deploy ([App](./goApp)) app from argoCD
+##  Deploy ([App](./goApp)) from argoCD
 
