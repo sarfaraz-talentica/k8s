@@ -21,9 +21,21 @@ Must specify --yes to apply changes
 kubectl apply -f nginx/nginx.yaml
 ```
 
-## 1.1 Deploy Cert-Manager
+## 1.2 Deploy Cert-Manager
 ```
 kubectl apply -f cert-manager/cert-manager.yaml
+```
+
+## 1.3 Deploy Our App
+```
+kubectl apply -f apps/
+```
+
+> Create DNS entry apple.techdevops.ml pointing to ingress LB
+
+## 2 Verify
+```
+http://apple.techdevops.ml/apple
 ```
 
 
