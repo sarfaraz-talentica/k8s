@@ -22,7 +22,7 @@ kubectl  apply -n argocd -f argo-cd/install.yaml
 
 > 1 Deploy ([Kyverno](./kyverno/manifest)) from argoCD
 
-> 2 Deploy ([Policies](/kyverno/policies)) from argoCD
+> 2 Deploy ([Policies](./kyverno/policies)) from argoCD
 
 > 3 Deploy ([App](./goApp)) app from argoCD
 
