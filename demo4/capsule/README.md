@@ -30,7 +30,7 @@ Refer this for Setup ([Kind](https://kind.sigs.k8s.io/docs/user/quick-start/#ins
 
 ## Now Create a Tenant
 
-> kubectl apply -g tenant.yaml
+> kubectl apply -f tenant.yaml
 
 ```
 kubectl get tenant
@@ -42,9 +42,8 @@ oil    3                 0                 alice        User         {"kubernete
 
 > ./create-user.sh alice oil
 
-```
-export KUBECONFIG=alice-oil.kubeconfig
-```
+> export KUBECONFIG=alice-oil.kubeconfig
+
 ## Try to create NS more than Quota
 
 ```
