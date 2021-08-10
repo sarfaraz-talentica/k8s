@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: gaurav04/go-app:b914200
+        image: gaurav04/go-app:latest
 
         resources:
           limits:
