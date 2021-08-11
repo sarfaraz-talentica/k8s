@@ -1,0 +1,18 @@
+---
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  labels:
+    team: devops
+  name: test-instance
+spec:
+  groups:
+  - name: from-node-exporter
+    rules:
+    - alert: RootDiskOutOfSpace
+      annotations:
+        message: Root Disk at Host {{ $labels.instance }} is {{printf "%.2f" $value}}%. Threshold is 10%
+      expr: node_filesystem_avail_bytes{instance=~"test-.*",mountpoint="/"}/node_filesystem_size_bytes{instance=~"test-.*",mountpoint="/"} * 100 <=10
+      for: 15m
+      labels:
+        severity: critical
