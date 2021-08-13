@@ -10,7 +10,7 @@ kops create cluster --name=prod.techdevops.ml \
 --zones=ap-south-1a \
 --node-size t2.micro \
 --node-count=3 \
---master-size t2.medium \
+--master-size t3.medium \
 --master-count 1
 ```
 
