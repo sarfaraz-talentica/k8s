@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: detail
+  name: myapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: gaurav04/go-app:b914200
+
+        resources:
+          limits:
+            cpu: 250m
+            memory: 150Mi
+          requests:
+            cpu: 200m
+            memory: 100Mi        
+        ports:
+        - containerPort: 8081
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: detail
+  name: myapp
+spec:
+  selector:
+    app: myapp
+  ports:
+  - port: 8081
+    targetPort: 8081
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: detail
+  name: myingress
+  labels:
+    name: myingress
+  annotations:
+    kubernetes.io/tls-acme: "true"
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    cert-manager.io/issuer: "letsencrypt-prod-details"
+spec:
+  tls:
+  - hosts:
+    - details.techdevops.ml
+    secretName: details-devops-com-tls
+  rules:
+  - host: details.techdevops.ml        
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: myapp
+            port: 
+              number: 8081
