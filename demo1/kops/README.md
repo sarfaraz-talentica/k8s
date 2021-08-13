@@ -1,4 +1,4 @@
-# Istalling Kops
+# Installing Kops
 
 Refer this ([kops](https://zero-to-jupyterhub.readthedocs.io/en/latest/kubernetes/amazon/step-zero-aws.html)):
 
